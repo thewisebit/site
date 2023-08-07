@@ -13,7 +13,6 @@ export const Layout = ({ children, pageContext, location }) => (
         <Global styles={css(theme => theme.global)} />
         <Header />
         <Box variant='layout.body'>{children}</Box>
-        <Footer />
       </Flex>
     </pageContextProvider.Provider>
   </ThemeProvider>
