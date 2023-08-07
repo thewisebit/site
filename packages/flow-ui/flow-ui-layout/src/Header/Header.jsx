@@ -53,9 +53,6 @@ export const Header = ({ children }) => {
           <Box sx={styles.menuContainer}>
             <HeaderMenu mobileMenu={mobileMenu} />
           </Box>
-          <Box sx={styles.colorModeContainer}>
-            {darkMode && <HeaderColorMode />}
-          </Box>
         </Flex>
       </Container>
       {children}
