@@ -22,18 +22,11 @@ const CardFooterAuthorAvatar = ({ variant, omitAuthor, author }) => {
 
   return visibility ? (
     author && author.thumbnail ? (
-      <Link
-        as={GLink}
-        to={author.slug}
-        aria-label={author.name}
-        sx={{ variant: responsiveVariant }}
-      >
         <AvatarSimple
           avatar={author.thumbnail}
           alt={author.name}
           size='small'
         />
-      </Link>
     ) : null
   ) : null
 }

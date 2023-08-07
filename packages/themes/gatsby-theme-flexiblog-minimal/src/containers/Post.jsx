@@ -55,8 +55,6 @@ const Post = ({
             )}
           </CardComponent>
           <Divider />
-          <AuthorExpanded author={post.author} />
-          <Divider />
           {post.category && (
             <CardList
               nodes={relatedPosts}

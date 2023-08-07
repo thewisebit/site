@@ -38,7 +38,6 @@ const CardBase = ({ columns, onMouseOver, ...props }) => (
           variant: rv(props.variant, 'content')
         }}
       >
-        <Media {...props} />
         <Body {...props}>
           <Footer {...props} />
         </Body>
