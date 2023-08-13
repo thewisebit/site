@@ -16,9 +16,10 @@ Golang interfaces are an important aspect of the Go programming language as they
 
 A Golang interface is a type that specifies a set of method signatures, defining a contract that other types must fulfil. Any type that implements all the methods in the interface is said to satisfy that interface, regardless of the underlying implementation. Interfaces in Golang enable flexibility, allowing different types to be treated uniformly based on shared behaviour, thus facilitating polymorphism and clean code design.
 
-For example, in Diagram 1 below, we define an interface `Animal` that has a method `Sound()`. Any animal that can make a `Sound()` will fulfil the interface.
+For example, in the diagram below, we define an interface `Animal` that has a method `Sound()`. Any animal that can make a `Sound()` will fulfil the interface.
 
 <img src="interface.png" />
+
 
 The following is an implementation of the `Animal` interface with two concrete structs, `Dog` and `Cat`, that fulfil the `Animal` interface.
 
@@ -113,6 +114,7 @@ func main() {
 The given code defines a real-world use case for processing an order in a microservices architecture. It includes interfaces for Payment, Inventory, and Shipping services, encapsulating the functionalities required for each step. The `OrderProcessingService` struct integrates these services to process an order, managing payment, reserving inventory, and scheduling shipping, demonstrating how microservices can be composed to handle complex business logic.
 
 <img src="microservices.png" />
+
 
 ```go
 type PaymentService interface {
