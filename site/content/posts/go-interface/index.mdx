@@ -509,6 +509,8 @@ func NewLogger() *Logger {
 var w Writer = NewLogger() // Caller decides to use the Writer interface
 ```
 
+#### Quirk in returning an interface
+
 There is a specific quirk in Go related to returning an interface. You should be aware of this when working with interfaces in your code.
 
 ```go
