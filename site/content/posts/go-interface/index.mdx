@@ -509,6 +509,40 @@ func NewLogger() *Logger {
 var w Writer = NewLogger() // Caller decides to use the Writer interface
 ```
 
+There is a specific quirk in Go related to returning an interface. You should be aware of this when working with interfaces in your code.
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	a := GetAnimal()
+	if a == nil {
+		fmt.Println("it is nil ")
+	} else {
+		fmt.Println("it is not nil") // THIS IS RETURNED!!!
+	}
+}
+
+type Animal interface {
+	Sound()
+}
+
+type Dog struct{}
+
+func (Dog) Sound() {}
+
+func GetAnimal() Animal {
+	var a *Dog
+	return a
+}
+```
+
+An interface value is considered to be nil only if both the concrete type and the concrete value within the interface are nil. In this code, the `GetAnimal` function returns an interface value of type `Animal` that contains a `nil` pointer of type `*Dog`, but the concrete type is not `nil`. As a result, when you compare a to nil, it returns false, and the message `it is not nil` is printed.
+
 ### Avoid interfaces pollution
 
 Avoiding interface pollution promotes clean and maintainable code by adhering to the principle of defining small and focused interfaces. By creating interfaces with only the methods that are strictly necessary, you reduce coupling between packages and make it easier to understand and change the code. This encourages more modular, reusable, and testable code
